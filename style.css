@@ -1,0 +1,7 @@
+header h1.display-4.text-light.p-2 {
+    font-size: clamp(1rem, 3rem, 5rem);
+}
+
+main h3.display-4{
+    font-size: clamp(1rem, 1.5rem, 2rem);    
+}

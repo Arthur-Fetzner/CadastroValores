@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contas Pessoais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="container-fluid bg-primary d-flex justify-content-center align-items-center">
+      <h1 class="display-4 text-light p-2">Contas Pessoais</h1>
+    </header>
+
+    <main class="container container-fluid-md my-4">
+      <div class="row">
+        <div class="col-4">
+          <h4 class="text-primary">Saldo:<span id="Saldo" class="ml-1"></span></h4>
+        </div>
+        <div class="col-4">
+          <h4 class="text-success">Receitas Futuras:<span id="ReceitaF" class="ml-1"></span></h4>
+        </div>
+        <div class="col-4">
+          <h4 class="text-danger">Despesas Futuras:<span id="DespesasF" class="ml-1"></span></h4>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="row">
+            <h3 class="display-4 ml-3">Receitas/Despesas:</h3>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-row">
+                <div class="col-2">
+                  <input type="date" class="form-control" id="data">
+                </div>
+                <div class="col-6">
+                  <input type="text" class="form-control" placeholder="Descrição" id="descricao">
+                </div>
+                <div class="col-3">
+                  <input type="number" class="form-control" placeholder="Valor" id="valor">
+                </div>
+                <div class="col-1">
+                  <button class="btn btn-primary" onclick="salvar()">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+      
+      <table class="table my-5">
+        <thead>
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Valor</th>
+          </tr>
+        </thead>
+        <tbody id="tabela">
+        </tbody>
+      </table>
+
+    </main>
+    <script src="script.js"></script>
+    <script src="js/bootstrap.bundle.jss"></script>
+  </body>
+</html>
