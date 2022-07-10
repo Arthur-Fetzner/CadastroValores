@@ -24,18 +24,18 @@ function atualizarTabela() {
                 <td class="col-6 text-${zero}">${novo.descricao}</td>
                 <td class="col-4">
                 <span class="text-${zero}">R$ ${novo.valor}</span>
-                <span class="ml-5 d-none" id="opcoesAcao${i}">
-                    <button type="submit" class="btn btn-sm btn-danger ml-5" onclick="apagar(${i})">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                </span>
+                <button type="submit" class="btn btn-sm btn-danger float-right py-0 d-none" onclick="apagar(${i})" id="opcoesAcao${i}">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
                 </td>
             </tr>`;
 
             saldo += parseFloat(novo.valor);
+            saldo = saldo >= 0 ? Math.floor(saldo*100)/100 : Math.ceil(saldo*100)/100;
         } 
     }
-    document.getElementById('Saldo').innerHTML = `R$${saldo >= 0 ? Math.floor(saldo*100)/100 : Math.ceil(saldo*100)/100}`;
+    document.getElementById('Saldo_cor').classList = saldo >= 0 ? 'text-success' : 'text-danger';
+    document.getElementById('Saldo').innerHTML = `R$${saldo}`;
 }
 
 function apagar(id) {

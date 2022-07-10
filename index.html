@@ -11,13 +11,13 @@
   </head>
   <body>
     <header class="container-fluid bg-primary d-flex justify-content-center align-items-center">
-      <h1 class="display-4 text-light p-2">Contas Pessoais</h1>
+      <h1 class="display-4 text-light p-2 text center">Contas Pessoais</h1>
     </header>
 
     <main class="container container-fluid-md my-4">
       <div class="row">
         <div class="col">
-          <h4 class="text-primary">Saldo:<span id="Saldo" class="ml-1"></span></h4>
+          <h4 class="text-success" id="Saldo_cor">Saldo:<span id="Saldo" class="ml-1"></span></h4>
         </div>
       </div>
 
@@ -29,16 +29,16 @@
           <div class="row">
             <div class="col">
               <div class="form-row">
-                <div class="col-2">
+                <div class="col-8 col-md-2 my-1">
                   <input type="date" class="form-control" id="data">
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6 my-1">
                   <input type="text" class="form-control" placeholder="Descrição" id="descricao">
                 </div>
-                <div class="col-3">
+                <div class="col-8 col-md-3 my-1">
                   <input type="number" class="form-control" placeholder="Valor" id="valor">
                 </div>
-                <div class="col-1">
+                <div class="col-5 col-md-1 my-1">
                   <button class="btn btn-primary" onclick="salvar()">
                     <i class="fa-solid fa-plus"></i>
                   </button>
