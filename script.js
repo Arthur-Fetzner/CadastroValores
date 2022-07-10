@@ -10,10 +10,13 @@ function opcoesAcao(acao, id) {
 function atualizarTabela() {
     let tabela = document.getElementById('tabela');
     let indice = JSON.parse(localStorage.getItem('indice'));
+    let saldo = 0;
+
     tabela.innerHTML = '';
+
     for (let i = 1; i <= indice; i++) {
         let novo = JSON.parse(localStorage.getItem(`${i}`));
-        if (novo != null) {
+        if (novo != null) {           
             let zero = novo.valor > 0 ? 'dark' : 'danger';
             tabela.innerHTML += `
             <tr onmouseover="opcoesAcao('on', ${i})" onmouseleave="opcoesAcao('out', ${i})">
@@ -28,9 +31,11 @@ function atualizarTabela() {
                 </span>
                 </td>
             </tr>`;
-        }
-        
+
+            saldo += parseFloat(novo.valor);
+        } 
     }
+    document.getElementById('Saldo').innerHTML = `R$${saldo >= 0 ? Math.floor(saldo*100)/100 : Math.ceil(saldo*100)/100}`;
 }
 
 function apagar(id) {
